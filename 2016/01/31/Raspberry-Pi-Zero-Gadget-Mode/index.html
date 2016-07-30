@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="bit.ovh - a piece of my mind">
+    <title>Raspberry Pi Zero - Gadget Mode - bit.ovh - a piece of my mind</title>
+    <meta name="author" content="Anonymous">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="Previously, I’d have simply pointed someone to this AdaFruit Article as the Kernel Modules weren’t included in the stock kernel.Not the case anymore, as the Kernel GitHub Repository currently has all">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Raspberry Pi Zero - Gadget Mode">
+<meta property="og:url" content="https://bit.ovh/2016/01/31/Raspberry-Pi-Zero-Gadget-Mode/index.html">
+<meta property="og:site_name" content="bit.ovh - a piece of my mind">
+<meta property="og:description" content="Previously, I’d have simply pointed someone to this AdaFruit Article as the Kernel Modules weren’t included in the stock kernel.Not the case anymore, as the Kernel GitHub Repository currently has all">
+<meta property="og:updated_time" content="2016-01-31T22:08:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Raspberry Pi Zero - Gadget Mode">
+<meta name="twitter:description" content="Previously, I’d have simply pointed someone to this AdaFruit Article as the Kernel Modules weren’t included in the stock kernel.Not the case anymore, as the Kernel GitHub Repository currently has all">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="//www.gravatar.com/avatar/a6e788b969834d7855749036edb5f62d?s=640"/>
+    
+    
+        <meta property="og:image" content="https://bit.ovh/2016/01/31/Raspberry-Pi-Zero-Gadget-Mode/Thumb.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://bit.ovh/2016/01/31/Raspberry-Pi-Zero-Gadget-Mode/Thumb.png" />
+    
+    
+        <meta property="og:image" content="https://bit.ovh/2016/01/31/Raspberry-Pi-Zero-Gadget-Mode/PiZero.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://bit.ovh/2016/01/31/Raspberry-Pi-Zero-Gadget-Mode/PiZero.png" />
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-ejlztp1tasruqfvoz6xmgqng0anzae8ox7cqjj5yibieqgcmhe9fwxfae6zj.min.css" type="text/css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-35611448-2']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">bit.ovh - a piece of my mind</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="/#about">
+        
+        
+            <img class="header-picture" src="//www.gravatar.com/avatar/a6e788b969834d7855749036edb5f62d?s=90"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/a6e788b969834d7855749036edb5f62d?s=110"/>
+            </a>
+            <span class="sidebar-profile-name">Anonymous</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">Home</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">Categories</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/all-archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archives</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">Search</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">About</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link " href="mailto:x@wdg.ovh" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
+                    <span class="sidebar-button-desc">Mail</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+        <div class="post-header-cover
+                    text-left
+                    post-header-cover--partial"
+             style="background-image:url('/2016/01/31/Raspberry-Pi-Zero-Gadget-Mode/PiZero.png');"
+             data-behavior="3">
+            
+        </div>
+
+            <div id="main" data-behavior="3"
+                 class="hasCover
+                        hasCoverMetaOut
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Raspberry Pi Zero - Gadget Mode
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Sun Jan 31 2016 15:38:09 GMT+0000">
+	
+		    Jan 31, 2016
+    	
+    </time>
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>Previously, I’d have simply pointed someone to <a href="https://learn.adafruit.com/turning-your-raspberry-pi-zero-into-a-usb-gadget/overview" target="_blank" rel="external">this AdaFruit Article</a> as the Kernel Modules weren’t included in the stock kernel.<br>Not the case anymore, as the <a href="https://github.com/raspberrypi/linux" target="_blank" rel="external">Kernel GitHub Repository</a> currently has all the changes needed for USB Gadget Mode to function.<br><a id="more"></a><br>Most Raspberry Pi images include the utility <a href="https://github.com/Hexxeh/rpi-update" target="_blank" rel="external"><code>rpi-update</code></a>, using this tool and a one-liner, you can update your Kernel to a version which has the Modules required.<br><figure class="highlight bash"><figcaption><span>Update Kernel and load Kernel Mods</span><a href="/downloads/code/RPi0Gadget.sh">view raw</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span></span><br><span class="line"><span class="comment">#Updates Kernel to next Branch</span></span><br><span class="line">sudo BRANCH=<span class="string">"next"</span> rpi-update;</span><br><span class="line"></span><br><span class="line"><span class="comment">#Load Overlay</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"dtoverlay=dwc2"</span> | sudo tee <span class="operator">-a</span> /boot/config.txt</span><br><span class="line"></span><br><span class="line"><span class="comment">#Load one of the G_xxx Modules (g_ether in this case)</span></span><br><span class="line"><span class="comment">#dwc2 is required only when automatically loading a g_ module,</span></span><br><span class="line"><span class="comment">#due to dwc2 being autoloaded after /etc/modules is read.</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"dwc2"</span> | sudo tee <span class="operator">-a</span> /etc/modules</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"g_ether"</span> | sudo tee <span class="operator">-a</span> /etc/modules</span><br><span class="line"></span><br><span class="line"><span class="comment">#Configure the new Network Interface to register over DHCP</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"allow-hotplug usb0"</span> | sudo tee <span class="operator">-a</span> /etc/network/interfaces</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"iface usb0 inet dhcp"</span> | sudo tee <span class="operator">-a</span> /etc/network/interfaces</span><br></pre></td></tr></table></figure><br>if you are using an image which does not come with rpi-update, don’t worry, its very easy to install - <a href="https://github.com/Hexxeh/rpi-update" target="_blank" rel="external">Check it out here</a></p>
+<p>You can do all of this preperation (including rpi-update, which can be done from a different system with a mounted SD Card, see instructions at the rpi-update GitHub Page) before sticking the MicroSD Card into the Pi Zero, so that it can be ready to be accessed, updated and controlled via a single MicroUSB Cable. Fantastic!</p>
+<p>Already have 2 Pi Zeros on my hands, got another one coming from Pimoroni that I won during one of their Bilge Tanks, and another from MagPi hopefully. 2 More on top of that and I’ll be building (and documenting) a simple Cluster of Raspberry Pi Zeros, that’ll be fun!</p>
+<p>Refs:<br><a href="https://github.com/raspberrypi/linux/pull/1239" target="_blank" rel="external">GitHub PR for the Kernel Changes that are used here</a></p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Informational/">Informational</a> <a class="tag tag--primary tag--small t-link" href="/tags/IoT/">IoT</a> <a class="tag tag--primary tag--small t-link" href="/tags/Programmable/">Programmable</a> <a class="tag tag--primary tag--small t-link" href="/tags/Raspberry-Pi/">Raspberry Pi</a> <a class="tag tag--primary tag--small t-link" href="/tags/Technology/">Technology</a> <a class="tag tag--primary tag--small t-link" href="/tags/Tutorial/">Tutorial</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/04/17/Worthless/"  data-tooltip="Worthless">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/01/29/Pimoroni/" data-tooltip="Pimoroni and pHat DAC">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://bit.ovh/2016/01/31/Raspberry-Pi-Zero-Gadget-Mode/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://bit.ovh/2016/01/31/Raspberry-Pi-Zero-Gadget-Mode/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://bit.ovh/2016/01/31/Raspberry-Pi-Zero-Gadget-Mode/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2016 Anonymous. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/04/17/Worthless/"  data-tooltip="Worthless">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/01/29/Pimoroni/" data-tooltip="Pimoroni and pHat DAC">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://bit.ovh/2016/01/31/Raspberry-Pi-Zero-Gadget-Mode/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://bit.ovh/2016/01/31/Raspberry-Pi-Zero-Gadget-Mode/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://bit.ovh/2016/01/31/Raspberry-Pi-Zero-Gadget-Mode/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://bit.ovh/2016/01/31/Raspberry-Pi-Zero-Gadget-Mode/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://bit.ovh/2016/01/31/Raspberry-Pi-Zero-Gadget-Mode/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://bit.ovh/2016/01/31/Raspberry-Pi-Zero-Gadget-Mode/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        
+
+
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="//www.gravatar.com/avatar/a6e788b969834d7855749036edb5f62d?s=110"/>
+        
+            <h4 id="about-card-name">Anonymous</h4>
+        
+            <h5 id="about-card-bio"><p>Student, Programmer, Hobbyist, Enthusiast - Everything Tech, IoT, Gaming.</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Sixth Form Student and Freelance Programmer</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                United Kingdom
+            </h5>
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/scrip-gfmrkxcl0qohe3cfdgxhzvc0yrceqta8i4iix0txvn8q4o2adlqd5n0jmkvt.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'https://bit.ovh/2016/01/31/Raspberry-Pi-Zero-Gadget-Mode/';
+                 
+                    this.page.identifier = '2016/01/31/Raspberry-Pi-Zero-Gadget-Mode/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'bitovh';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+
+
+
+</html>
