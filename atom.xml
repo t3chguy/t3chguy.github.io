@@ -72,9 +72,9 @@
 <hr>
 <h1 id="Update_3A"><a href="#Update_3A" class="headerlink" title="Update:"></a>Update:</h1><p>The pHat DAC Kit I won arrived today (via Tracked DPD Post, no Expenses Spared!!!)<br>I fiddled around, unable to decide how I want to stack it all up - desoldered a 2x20 header at one point, and drilled the corner holes of my Pi Zero and the pHat DAC to fit chunkier Nylon Bolts. I felt really picky but I’m truly happy with it. I did not receive this for review purposes, it was a giveaway, so I can talk crap about it if it happens to be rubbish, but unfortunately I can’t as it is really Awesome!<br>The DAC is suprisingly clear, it happens to be the same DAC as found in the HiFiBerry, so its just a smaller board. 192kHz, 24bit, Line-Level output. - <a href="http://learn.pimoroni.com/tutorial/phat/raspberry-pi-phat-dac-install" target="_blank" rel="external">Installation Instructions</a></p>
 <hr>
-<div class="figure fig-33"><a class="fancybox" href="image1.jpg" title=""><img class="fig-img" src="image1.jpg" alt=""></a></div>
-<div class="figure fig-33"><a class="fancybox" href="image2.jpg" title=""><img class="fig-img" src="image2.jpg" alt=""></a></div>
-<div class="figure fig-33"><a class="fancybox" href="image3.jpg" title=""><img class="fig-img" src="image3.jpg" alt=""></a></div>
+<div class="figure fig-33" style="width:;"><a class="fancybox" href="image1.jpg" title="" data-fancybox-group=""><img class="fig-img" src="image1.jpg" alt=""></a></div>
+<div class="figure fig-33" style="width:;"><a class="fancybox" href="image2.jpg" title="" data-fancybox-group=""><img class="fig-img" src="image2.jpg" alt=""></a></div>
+<div class="figure fig-33" style="width:;"><a class="fancybox" href="image3.jpg" title="" data-fancybox-group=""><img class="fig-img" src="image3.jpg" alt=""></a></div>
 <hr>
 <p>The Kit came with:</p>
 <ul>
