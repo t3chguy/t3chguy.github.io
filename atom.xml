@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="https://bit.ovh/"/>
-  <updated>2016-01-25T18:34:11.000Z</updated>
+  <updated>2017-06-06T13:20:19.945Z</updated>
   <id>https://bit.ovh/</id>
   
   <author>
@@ -15,15 +15,14 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="https://bit.ovh/2016/10/28/hello-world/"/>
-    <id>https://bit.ovh/2016/10/28/hello-world/</id>
-    <published>2016-10-28T16:55:49.951Z</published>
-    <updated>2016-01-25T18:34:11.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to my new Blog. I plan to keep it simple, yet useful. Hoping to focus on things such as Arduino, AVR, Raspberry Pi - General Computer Science really.</p>
-]]></content>
+    <title><![CDATA[Installing Riot Desktop on Debian/Ubuntu]]></title>
+    <link href="https://bit.ovh/2017/06/06/Installing-Riot-Desktop-on-Debian-Ubuntu/"/>
+    <id>https://bit.ovh/2017/06/06/Installing-Riot-Desktop-on-Debian-Ubuntu/</id>
+    <published>2017-06-06T14:20:19.000Z</published>
+    <updated>2017-06-06T13:20:19.945Z</updated>
+    <content type="html"></content>
     <summary type="html">
-    <![CDATA[<p>Welcome to my new Blog. I plan to keep it simple, yet useful. Hoping to focus on things such as Arduino, AVR, Raspberry Pi - General Comp]]>
+    
     </summary>
     
   </entry>
