@@ -13,16 +13,16 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description">
+    <meta name="description" content="The best way to get riot installed is to install it from the official repositories, this way your package manager can keep it up to date for you. All the info you need is on https://riot.im/desktop bu">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Installing Riot Desktop on Debian/Ubuntu">
 <meta property="og:url" content="https://bit.ovh/2017/06/06/Installing-Riot-Desktop-on-Debian-Ubuntu/index.html">
 <meta property="og:site_name" content="bit.ovh - a piece of my mind">
-<meta property="og:description">
-<meta property="og:updated_time" content="2017-06-06T13:20:19.945Z">
+<meta property="og:description" content="The best way to get riot installed is to install it from the official repositories, this way your package manager can keep it up to date for you. All the info you need is on https://riot.im/desktop bu">
+<meta property="og:updated_time" content="2017-06-06T13:27:44.830Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Installing Riot Desktop on Debian/Ubuntu">
-<meta name="twitter:description">
+<meta name="twitter:description" content="The best way to get riot installed is to install it from the official repositories, this way your package manager can keep it up to date for you. All the info you need is on https://riot.im/desktop bu">
     
     
         
@@ -287,7 +287,9 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            
+            <p>The best way to get riot installed is to install it from the official repositories, this way your package manager can keep it up to date for you. All the info you need is on <a href="https://riot.im/desktop" target="_blank" rel="external">https://riot.im/desktop</a> but along with no instructions, the ones below should work for most users but do assume you have <code>wget</code>, <code>software-properties-common</code>, <code>sudo</code> and the <code>apt</code> wrapper.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">set</span> -<span class="keyword">e</span></span><br><span class="line">wget -qO - https://riot.im/packages/debian/repo-<span class="keyword">key</span>.<span class="keyword">asc</span> | sudo apt-<span class="keyword">key</span> <span class="keyword">add</span> -</span><br><span class="line">sudo apt-<span class="keyword">add</span>-repository https://riot.im/packages/debian/</span><br><span class="line">sudo apt <span class="keyword">update</span></span><br><span class="line">sudo apt <span class="keyword">install</span> riot-web</span></span><br></pre></td></tr></table></figure>
+
             
         </div>
     </div>
