@@ -273,6 +273,58 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/2017/06/10/Installing-Matrix-Synapse-on-Debian-Ubuntu/">
+                            Installing [Matrix] Synapse on Debian/Ubuntu
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-06-10T18:37:50+01:00">
+	
+		    Jun 10, 2017
+    	
+    </time>
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>Whether it be for privacy or simply for fun, a time will come that you will want to set up a Matrix homeserver. Currently that pretty much means Synapse, as other solutions are less…”feature complete”, though the Readme does not really include enough information for less tech-savvy people to do so easily, so here is that information.</p>
+<p>First things first, get ahold of a machine with 2GB+ RAM, modern enough CPU and some disk space. It’ll also need an IP Address, public if you wish to connect to it from anywhere, and optionally a domain if you don’t want to have to type the IP for everything. This guide will take you through installation, basic configuration and even setting up Let’s Encrypt Certificates in a fashion that you can copy and paste or dig deeper into and understand.</p>
+<p>Make sure you log in as root for the installation, this just means that you will not have to authorize each and every action you do with <code>sudo</code>. This can often be done using the command <code>sudo su</code>. If you are using a VPS from the likes of DigitalOcean they often provide you direct access to the root user without sudo, though if you are new, be careful not to mistype things.</p>
+<p>Next we will trust repository key and add the repository to apt’s repository list.</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget -qO - <span class="keyword">https</span>://matrix.org/packages/debian/repo-key.asc | apt-key <span class="built_in">add</span> -</span><br><span class="line">apt-<span class="built_in">add</span>-repository <span class="keyword">http</span>://matrix.org/packages/debian/</span><br><span class="line">apt-<span class="built_in">get</span> update</span><br></pre></td></tr></table></figure>
+<p>If it complains about <code>add-apt-repository: command not found</code> you should run <code>apt-get update &amp;&amp; apt-get install software-properties-common -y</code> and rerun the failed command.</p>
+<p>At this stage the system knows about the Synapse package, and we can install it.<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install <span class="keyword">matrix</span>-synapse -<span class="literal">y</span></span><br></pre></td></tr></table></figure></p>
+<p>The installer will ask you for a server name, enter what you would like to see as the server part of your username, often your domain.<br>If I wanted usernames like <code>user@bit.ovh</code> I would enter <code>bit.ovh</code>, this will even work if <code>bit.ovh</code> does not resolve to the server hosting synapse.<br>After this it will ask you about reporting analytics, this choice is up to you. Some time later, once apt is done installing Synapse you will see your prompt return and you can continue.</p>
+<p>At this stage you will do any configurations you may need.<br>If you configured your server_name to be a domain which does not point at the server and wish to federate your server you will have to create an SRV record as detailed <a href="https://github.com/matrix-org/synapse#setting-up-federation" target="_blank" rel="external">here</a></p>
+<h5 id="Lets_Encrypt_configuration_to_follow_2C_LAPTOP_DYING"><a href="#Lets_Encrypt_configuration_to_follow_2C_LAPTOP_DYING" class="headerlink" title="Lets Encrypt configuration to follow, LAPTOP DYING"></a>Lets Encrypt configuration to follow, LAPTOP DYING</h5><p>To start your new server you will have to run <code>service matrix-synapse start</code> assuming your distro ships with upstart/systemd/similar.</p>
+<p>See more documentation at <a href="https://github.com/matrix-org/synapse" target="_blank" rel="external">https://github.com/matrix-org/synapse</a></p>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2017/06/10/Installing-Matrix-Synapse-on-Debian-Ubuntu/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/2017/06/06/Installing-Riot-Desktop-on-Debian-Ubuntu/">
                             Installing Riot Desktop on Debian/Ubuntu
                         </a>
@@ -590,6 +642,25 @@
                 
                 <div class="media">
                     
+                    <div class="media-body">
+                        <a class="link-unstyled" href="https://bit.ovh/2017/06/10/Installing-Matrix-Synapse-on-Debian-Ubuntu/">
+                            <h3 class="media-heading">Installing [Matrix] Synapse on Debian/Ubuntu</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jun 10, 2017
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
                     <div class="media-left">
                         <a class="link-unstyled" href="https://bit.ovh/2016/01/25/A-little-about-me/">
                             <img class="media-image" src="https://www.gravatar.com/avatar/a6e788b969834d7855749036edb5f62d?s=110" width="90" height="90"/>
@@ -620,7 +691,7 @@
                 data-message-zero="no post found"
                 data-message-one="1 post found"
                 data-message-other="{n} posts found">
-                4 posts found
+                5 posts found
             </p>
         </div>
     </div>
