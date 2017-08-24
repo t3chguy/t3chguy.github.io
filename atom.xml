@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="https://bit.ovh/"/>
-  <updated>2017-06-10T17:00:47.293Z</updated>
+  <updated>2017-08-24T13:39:09.675Z</updated>
   <id>https://bit.ovh/</id>
   
   <author>
@@ -13,6 +13,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[GSoC Wrapup! 2017 Matrix.org]]></title>
+    <link href="https://bit.ovh/2017/08/24/GSoC-Wrapup-2017-Matrix-org/"/>
+    <id>https://bit.ovh/2017/08/24/GSoC-Wrapup-2017-Matrix-org/</id>
+    <published>2017-08-24T14:16:56.000Z</published>
+    <updated>2017-08-24T13:39:09.675Z</updated>
+    <content type="html"><![CDATA[<p>The initial plan was to develop further bridges but since a lot of the community were already focussing efforts there, the Matrix.org team set me alternate tasks I could choose from. I was given the task to develop a way for Matrix to be indexable by search engines, as Riot.im is a really heavy React application that is not crawler friendly, so a client which had no client side scripting was desired. I was also tasked with squashing bugs and some substantial changes or fixes in riot-web, outlined below. The reason this was needed is that riot-web (riot.im) is a very heavy React web application, and the Google crawler simply is unable to index it. </p>
+<a id="more"></a>
+<p>Publications mentioning some of my work done during GSoC:</p>
+<ul>
+<li><a href="https://matrix.org/blog/2017/07/19/status-update/" target="_blank" rel="external">https://matrix.org/blog/2017/07/19/status-update/</a></li>
+<li><a href="https://medium.com/@RiotChat/riot-web-0-11-is-here-3edbf9dbb7ed" target="_blank" rel="external">https://medium.com/@RiotChat/riot-web-0-11-is-here-3edbf9dbb7ed</a></li>
+<li><a href="https://medium.com/@RiotChat/riot-web-and-desktop-version-0-10-0-is-here-e6147f5f576f" target="_blank" rel="external">https://medium.com/@RiotChat/riot-web-and-desktop-version-0-10-0-is-here-e6147f5f576f</a></li>
+<li><a href="https://medium.com/@RiotChat/riot-web-and-desktop-version-0-9-10-is-here-a5b074f36741" target="_blank" rel="external">https://medium.com/@RiotChat/riot-web-and-desktop-version-0-9-10-is-here-a5b074f36741</a></li>
+</ul>
+<p>Most of my GSoC time was spent squashing bugs in the riot-web stack, matrix-react-sdk, matrix-js-sdk and a couple of other places. All major changes were merged into the origin repository, some are still pending merging at the time of writing. Large changes I made in the riot-web webapp include:</p>
+<ul>
+<li>Adding Piwik analytics, so that the devs can see how their app is being used and interacted with. This was done in a completely anonymous fashion with the ability to opt-out to appease the privacy protecting users. <a href="https://github.com/matrix-org/matrix-react-sdk/pull/1046" target="_blank" rel="external">[1]</a> <a href="https://github.com/matrix-org/matrix-react-sdk/pull/1046" target="_blank" rel="external">[2]</a></li>
+<li>Adding support for Screen Sharing in Firefox, previously this was limited to Chromium. <a href="https://github.com/matrix-org/matrix-js-sdk/commit/0415b9cf4c81980c18038a6fbbc52794ac229e6d" target="_blank" rel="external">[1]</a></li>
+<li>Adding support for choosing which microphone and webcam you would want Riot to use for VoIP calls. <a href="https://github.com/matrix-org/matrix-react-sdk/pull/850" target="_blank" rel="external">[1]</a></li>
+<li>Adding the ability to hide specific events from the applications timeline which some people consider to be cluttering, this one was definitely much harder than it would seem, as hiding events naively simply would not work as it would break the rendering of compound elements like Membership Event Lists and also break Read Markers and Read Receipts. <a href="https://github.com/matrix-org/matrix-react-sdk/pull/1243" target="_blank" rel="external">[1]</a> <a href="https://github.com/matrix-org/matrix-react-sdk/pull/1308" target="_blank" rel="external">[2]</a></li>
+<li>Many others…<ul>
+<li><a href="https://github.com/vector-im/riot-web/commits/develop?author=t3chguy" target="_blank" rel="external">riot-web commits</a></li>
+<li><a href="https://github.com/matrix-org/matrix-react-sdk/commits/develop?author=t3chguy" target="_blank" rel="external">matrix-react-sdk commits</a></li>
+<li><a href="https://github.com/matrix-org/matrix-js-sdk/commits/develop?author=t3chguy" target="_blank" rel="external">matrix-js-sdk commits</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Matrix-Static"><a href="#Matrix-Static" class="headerlink" title="Matrix-Static"></a>Matrix-Static</h2><p>Originally called, riot-static, is a project that allows people to peek into public Matrix rooms from any dumb web browser, as it uses no javascript whatsoever. Almost everything in this repository is my own work. There are a few closed PRs that my Mentor and I used for review comments. The repository has most recent code in the develop branch. The master branch is the current release. <a href="https://github.com/t3chguy/matrix-static" target="_blank" rel="external">https://github.com/t3chguy/matrix-static</a><br>Whilst it is in a working state, considered stable and even deployed at <a href="https://view.matrix.org/" target="_blank" rel="external">https://view.matrix.org/</a>, there are a bunch of open issues which are feature requests/todo items which I plan and intend to do after GSoC. During the design and creation of matrix-static I learnt a lot about Go, Matrix and threaded programming.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>The initial plan was to develop further bridges but since a lot of the community were already focussing efforts there, the Matrix.org team set me alternate tasks I could choose from. I was given the task to develop a way for Matrix to be indexable by search engines, as Riot.im is a really heavy React application that is not crawler friendly, so a client which had no client side scripting was desired. I was also tasked with squashing bugs and some substantial changes or fixes in riot-web, outlined below. The reason this was needed is that riot-web (riot.im) is a very heavy React web application, and the Google crawler simply is unable to index it. </p>]]>
+    
+    </summary>
+    
+      <category term="GSoC" scheme="https://bit.ovh/tags/GSoC/"/>
+    
+      <category term="Matrix" scheme="https://bit.ovh/tags/Matrix/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Installing [Matrix] Synapse on Debian/Ubuntu]]></title>
